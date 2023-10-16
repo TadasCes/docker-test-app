@@ -31,5 +31,8 @@
 		"execMap": {
 			"pde": "processing --sketch={{pwd}} --run"
 		}
+	},
+	"publishConfig": {
+		"@VilkelisV:registry": "https://npm.pkg.github.com"
 	}
 }
