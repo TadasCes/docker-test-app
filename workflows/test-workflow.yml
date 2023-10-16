@@ -17,5 +17,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Echo words
-    - run: |
+      run: |
         echo The PR was merged
