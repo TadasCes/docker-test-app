@@ -14,5 +14,5 @@ jobs:
 
     steps:
     - name: Echo words
-    - run: |
+      run: |
         echo The PR was merged
