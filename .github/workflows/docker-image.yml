@@ -3,8 +3,6 @@ name: Test echo on merge
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
 
