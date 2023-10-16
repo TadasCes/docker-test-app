@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/src/app/
+      - /usr/src/app/node_modules
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_DB=users
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database-seed.sql:/docker-entrypoint-initdb.d/database-seed.sql
+  # cache:
+  #   image: redis:latest
+  #   environment:
+  #     - REDIS_HOST=localhost
+  #     - REDIS_PORT=6379
+  #   ports:
+  #     - '6379:6379'
+  #   command: redis-server --save 20 1 --loglevel warning

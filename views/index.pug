@@ -1,0 +1,50 @@
+extends ./layout
+
+block content
+  .row.pt-2
+    .col-md-12
+      h1
+        | Users
+    .col-md-12
+      h2
+        | Add new
+      .card-block
+        form(method='POST' action='/users' autocomplete='off')
+          //- input(type='hidden' name='userId', value=user ? user.id : '')
+          .form-group
+            label.form-control-label(for='name')
+              | Name:
+            input#name.form-control(type='name' name='name' autocomplete='off', value=user ? user.email : '')
+          .form-group
+            label.form-control-label(for='age')
+              | age:
+            input#age.form-control(type='number' name='age' autocomplete='off')
+
+          button.m-1.btn.btn-primary(type='submit')
+            | Submit
+          a.m-1.btn.btn-secondary(href='/' role='button')
+            | Reset
+
+
+    .col-md-12
+      h2  User list
+
+    .col-md-12
+      if users && users.length
+        table.table.table-bordered.table-striped
+          thead
+            th
+              | Name
+            th
+              | Age 
+
+          tbody
+            each user in users
+              tr
+                td
+                  | #{user.name}
+                td
+                  | #{user.age}
+      else
+        p.lead
+          | No users found

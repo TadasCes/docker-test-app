@@ -1,0 +1,35 @@
+{
+	"name": "test-app",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "node index",
+		"dev": "nodemon --watch"
+	},
+	"dependencies": {
+		"cookie-parser": "~1.4.4",
+		"debug": "~2.6.9",
+		"dotenv": "^16.3.1",
+		"express": "~4.16.1",
+		"express-validator": "^7.0.1",
+		"hbs": "~4.0.4",
+		"http-errors": "~1.6.3",
+		"morgan": "~1.9.1",
+		"mysql": "^2.18.1",
+		"nodemon": "^3.0.1",
+		"pg": "^8.11.3",
+		"postgres": "^3.4.0",
+		"pug": "^3.0.2",
+		"redis": "^4.6.10"
+	},
+	"nodemonConfig": {
+		"verbose": true,
+		"ignore": [
+			"*.test.js",
+			"**/fixtures/**"
+		],
+		"execMap": {
+			"pde": "processing --sketch={{pwd}} --run"
+		}
+	}
+}
