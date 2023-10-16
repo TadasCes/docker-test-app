@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/init", userController.initDatabase);
 
 router.get("/", userController.getUsers);
-//test6
+//test7
 
 router.post("/", async (req, res) => {
 	try {
